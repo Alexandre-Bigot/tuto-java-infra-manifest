@@ -39,6 +39,9 @@ spec:
       labels:
         app: postgres-manifest
     spec:
+      securityContext:
+        fsGroup: 1001
+        runAsUser: 1001
       containers:
         - name: postgres
           image: bitnami/postgresql:14.9.0
