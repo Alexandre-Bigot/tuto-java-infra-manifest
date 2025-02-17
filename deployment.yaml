@@ -32,6 +32,8 @@ spec:
                 secretKeyRef:
                   name: postgres-secret
                   key: POSTGRES_PASSWORD
+            - name: POSTGRESQL_DATABASE
+              value: "demo"
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://postgres-manifest:5432/demo
           resources:
