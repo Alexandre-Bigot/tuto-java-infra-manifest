@@ -19,7 +19,7 @@ spec:
         - name: registry-pull-secret
       containers:
         - name: dso-demo-java
-          image: harbor.apps.c6.numerique-interieur.com/mi-certfr/app-java-forge-dso-demo:master
+          image: harbor.formation.cpin.numerique-interieur.com/mi-certfr/app-java-forge-dso-demo:master
           imagePullPolicy: Always
           env:
             - name: "SPRING_DATASOURCE_USERNAME"
@@ -33,10 +33,7 @@ spec:
                   name: postgres-secret
                   key: POSTGRES_PASSWORD
             - name: POSTGRESQL_DATABASE
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-secret
-                  key: POSTGRESQL_DATABASE
+              value: "demo"
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://postgres-manifest:5432/demo
           resources:
