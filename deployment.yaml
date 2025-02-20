@@ -25,12 +25,12 @@ spec:
             - name: "SPRING_DATASOURCE_USERNAME"
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
+                  name: crtab-sops-secret
                   key: POSTGRES_USER
             - name: "SPRING_DATASOURCE_PASSWORD"
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
+                  name: crtab-sops-secret
                   key: POSTGRES_PASSWORD
             - name: POSTGRESQL_DATABASE
               value: "demo"
